@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+market
+{% endblock %}
+
+{% block content %}
+<h1 class="text-xl text-white w-full text-center py-8"> Market place</h1>
+<table class="text-gray-700 w-full text-center">
+    <thead>
+        <tr>
+            <th scope="col" class="text-white">ID</th>
+            <th scope="col" class="text-white">Name</th>
+            <th scope="col" class="text-white">Barcode</th>
+            <th scope="col" class="text-white">Price</th>
+            <th scope="col" class="text-white capitalize">options</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td class="capitalize text-white"> {{item.id}}</td>
+            <td class="capitalize text-white"> {{item.name}} </td>
+            <td class="capitalize text-white"> {{item.barcode}} </td>
+            <td class="capitalize text-white"> $ {{item.price}} </td>
+            <td class="capitalize text-white">
+                <button type="button"
+                    class=" hover:bg-opacity-75 min-w-max overflow-hidden shadow relative duration-300 bg-blue-500 px-3 py-1 rounded-md capitalize">more
+                    info</button>
+                <button type="button"
+                    class=" hover:opacity-75 duration-300 bg-green-500 px-3 py-1 rounded-md capitalize">purchase
+                    this
+                    item</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

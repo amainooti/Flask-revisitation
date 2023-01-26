@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+              .content-auto {
+                content-visibility: auto;
+              }
+            }
+         </style>
+    <title>
+        {% block title %}
+
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav class="flex justify-between w-full h-12 bg-gray-700 ">
+        <ul class="flex w-auto gap-8 items-center ml-12">
+            <li class="text-white  capitalize text-lg"><a href="{{ url_for('home_page') }}">Flask
+                    market</a></li>
+            <li class="text-white hover:opacity-75 capitalize"><a href="{{ url_for('home_page') }}">home</a></li>
+            <li class="text-white hover:opacity-75 capitalize"><a href="{{ url_for('market_page') }}">market</a></li>
+        </ul>
+        <ul class="flex p-2 gap-3 pr-5 items-center">
+            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=""> Register </a> </li>
+            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=""> login </a> </li>
+        </ul>
+    </nav>
+    <main class="h-screen w-full bg-gray-800">
+
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"
+        integrity="sha512-6UofPqm0QupIL0kzS/UIzekR73/luZdC6i/kXDbWnLOJoqwklBK6519iUnShaYceJ0y4FaiPtX/hRnV/X/xlUQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
