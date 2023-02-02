@@ -38,8 +38,10 @@
             <li class="text-white hover:opacity-75 capitalize"><a href="{{ url_for('market_page') }}">market</a></li>
         </ul>
         <ul class="flex p-2 gap-3 pr-5 items-center">
-            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=""> Register </a> </li>
-            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=""> login </a> </li>
+            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=" {{ url_for('register') }} ">
+                    Register </a> </li>
+            <li class="capitalize text-white hover:opacity-75 cursor-pointer"><a href=" {{ url_for('login') }} "> login
+                </a> </li>
         </ul>
     </nav>
     <main class="h-screen w-full bg-gray-800">

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+register
+{% endblock %}
+
+{% block content %}
+<div class="">
+
+    <h1 class="text-center text-2xl py-12 text-white "> Register </h1>
+    <form id="form-register" class=" w-1/2 gap-5  h-full  flex flex-col justify-center  m-auto" action="" method="POST">
+        {{ form.hidden_tag() }}
+        <h3 class="text-center text-white text-xl capitalize"> Please Create an account </h3>
+        {{ form.username(class="py-2 px-3 rounded-md", placeholder="Username") }}
+        {{ form.email(class="py-2 px-3 rounded-md", placeholder="Email") }}
+        {{ form.password1(class="py-2 px-3 rounded-md", placeholder="Password") }}
+        {{ form.password2(class="py-2 px-3 rounded-md", placeholder="Confirm Password") }}
+        {{ form.submit(class="py-2 px-5 bg-blue-400 rounded-sm hover:bg-opacity-95") }}
+    </form>
+</div>
+
+{% endblock %}
